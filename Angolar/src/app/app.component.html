@@ -1,0 +1,41 @@
+<img src="logo.png" alt="Logo" class="img-fluid" style="max-width: 100%; height: auto;">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<div class="navbar mt-3">
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="home" href="#home">
+        <i class="fas fa-home"></i> Home
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="login" href="#login">
+        <i class="fas fa-sign-in-alt"></i> Login
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" routerLink="product" href="#product">
+        <i class="fas fa-box"></i> Product
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="winner" href="#winner">
+        <i class="fas fa-trophy"></i> Winner
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="cart" href="#cart">
+        <i class="fas fa-shopping-cart"></i> {{ p.sum }} Cart
+      </a>
+    </li>
+    @if(this.u.currentUser!=undefined){
+      <li class="nav-item">
+        <a class="nav-link" routerLink="yourBuy" href="#yourBuy">
+            <i class="fas fa-shopping-bag"></i> your Sales
+        </a>
+    </li>
+    }
+  </ul>
+</div>
+
+<router-outlet></router-outlet>

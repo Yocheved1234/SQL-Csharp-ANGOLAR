@@ -1,0 +1,31 @@
+<div class="container mt-3">
+  <div *ngFor="let key of quantities | keyvalue" class="product-card">
+    <div class="product-info">
+      <h5>{{ getProduct(key.key).descriptionP || 'No info' }}</h5>
+      <img [src]="getProduct(key.key).imageP + '.png'" alt="Product Image" class="product-image">
+    </div>
+    <div class="price-and-buttons">
+      <div>
+        <button class="b1" (click)="increment(getProduct(key.key))"
+          [disabled]="!getProduct(key.key)">
+          <span class="b2">+</span> <!-- גודל ועובי טקסט -->
+        </button>
+        <span class="b2">{{ key.value }}</span>
+        <button class="b1" (click)="decrement(getProduct(key.key))"
+          [disabled]="!getProduct(key.key)">
+          <span class="b2">-</span> <!-- גודל ועובי טקסט -->
+        </button>
+
+
+      </div>
+    </div>
+    <div>
+      <p class="product-sum">{{ sumAll(key.key, key.value) | dolar }}</p>
+    </div>
+  </div>
+</div>
+
+<div class="total-container">
+  <h1>{{ allSum | dolar }}</h1>
+  <button class="btn btn-primary" (click)="toPay()">לשלם</button>
+</div>

@@ -1,0 +1,51 @@
+<div class="container mt-3">
+  <form #form="ngForm" (ngSubmit)="Check(form)" class="was-validated">
+    <div class="mb-3 mt-3">
+      <label for="uname" class="form-label">Username:</label>
+      <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required
+        [(ngModel)]="f.nameU" #validName="ngModel" pattern="^[A-Za-z]{3,}$">
+      <div class="valid-feedback">Valid.</div>
+
+      @if( validName.invalid && (validName.touched ||validName.dirty)){
+      <div class="inValid-feedback">
+        <p [hidden]="!validName.errors!['required']">Please fill out this field.</p>
+        <p [hidden]="!validName.errors!['pattern']">Username must contain only letters and at least 3 characters.</p>
+      </div>
+      }
+    </div>
+
+    <div class="mb-3 mt-3">
+      <label for="phone" class="form-label">Phone:</label>
+      <input type="text" class="form-control" id="phone" placeholder="Enter phone" name="phone" required
+        [(ngModel)]="f.phone" #phone="ngModel" minlength=9 pattern="^[0-9]+$">
+      @if( phone.invalid && (phone.touched ||phone.dirty)){
+      <div class="inValid-feedback">
+        <p [hidden]="!phone.errors?.['required']">Please fill out this field.</p>
+        <p [hidden]="!phone.errors?.['pattern']">Only digits can be enterd.</p>
+        <p [hidden]="!phone.errors?.['minlength']">You number is not long unof.</p>
+      </div>
+      }
+
+    </div>
+
+    <div class="mb-3 mt-3">
+      <label for="email" class="form-label">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email" required
+        [(ngModel)]="f.email" pattern="^[a-zA-Z0-9._%+-]+@[^\s@]+$" #email="ngModel">
+      <div class="valid-feedback">Valid.</div>
+
+      @if( email.invalid && (email.touched ||email.dirty)){
+      <div class="inValid-feedback">
+        <p [hidden]="!email.errors!['required']">Please fill out this field.</p>
+        <p [hidden]="!email.errors!['pattern']">Please enter a valid email address.</p>
+      </div>
+      }
+    </div>
+
+
+    <button type="submit" class="btn btn-custom" [disabled]="form.invalid">Submit</button>
+    <app-icon-button icon="fas fa-sign-in-alt" label="Log In" (buttonClick)="onLogIn()">
+    </app-icon-button>
+
+  </form>
+</div>

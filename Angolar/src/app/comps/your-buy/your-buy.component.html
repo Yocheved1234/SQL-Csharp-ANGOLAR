@@ -1,0 +1,19 @@
+<div class="container mt-3">          
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Number Order</th>
+          <th>Date</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of allB">
+          <td><p style="color: red;" (click)="more(item.id)">{{ item.id }}</p></td>
+          <td>{{ item.date | date:'yyyy-MM-dd' }}</td>
+          <td>{{ item.price }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

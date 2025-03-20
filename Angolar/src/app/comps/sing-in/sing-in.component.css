@@ -1,0 +1,78 @@
+@font-face {
+    font-family: 'Riesling'; /* שם הפונט */
+    src: url('/riesling.ttf') format('truetype'); /* נתיב לקובץ הפונט */
+}
+
+body {
+    font-family: 'Riesling', sans-serif; /* שימוש בפונט */
+}
+
+.form-label {
+    color: red;
+}
+
+
+
+.valid-feedback {
+    color: green;
+}
+
+.invalid-feedback {
+    color: red;
+}
+
+html, body {
+    height: 100%; /* הגדרת גובה מלא של ה-body */
+    margin-top: 20%; /* ביטול מרג'ין ברירת מחדל */
+    display: flex; /* שימוש ב-flexbox */
+    justify-content: center; /* מרכז את התוכן אופקית */
+    align-items: center; /* מרכז את התוכן אנכית */
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px; /* הגדרת רוחב מקסימלי */
+}
+
+.btn-group {
+    display: flex; /* שימוש ב-flexbox */
+}
+
+.btn-custom {
+    background-color: white; /* צבע רקע לבן */
+    color: rgb(227, 62, 62); /* צבע טקסט שחור */
+    padding: 12px 24px; /* ריפוד */
+    border: 1px solid rgb(227, 62, 62); /* גבול שחור */
+    border-radius: 0; /* ביטול פינות מעוגלות */
+    font-size: 16px; /* גודל גופן */
+    font-weight: bold; /* גופן מודגש */
+    text-transform: uppercase; /* טקסט באותיות גדולות */
+    cursor: pointer; /* שינוי סמן העכבר */
+    transition: background-color 0.3s, transform 0.2s; /* אפקט מעבר */
+}
+
+.btn-custom:not(:last-child) {
+    border-right: none; /* ביטול גבול ימין עבור הכפתור הראשון */
+}
+
+.btn-custom:hover {
+    background-color: rgb(227, 62, 62); /* צבע רקע כשמעבירים מעל הכפתור */
+    color: white; /* צבע טקסט לבן כשמעבירים מעל הכפתור */
+}
+
+.btn-custom:active {
+    transform: scale(0.95); /* הקטנה קלה כשנלחצים */
+}
+.form-control {
+    border: 1px solid red;
+    margin-bottom: 40px; /* רווח בין ה-inputים */
+}
+
+.input-center {
+    display: block; /* כדי לאפשר למרכז */
+    margin: 0 auto; /* מרכז את ה-input */
+    width: 50%; /* או כל רוחב אחר שתרצה */
+}

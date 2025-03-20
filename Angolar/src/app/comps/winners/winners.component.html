@@ -1,0 +1,12 @@
+<div class="card-container">
+    @for(f of allP; track f.id)
+    {
+        <div class="product-card"> <!-- הוספת מחלקת product-card כאן -->
+            <div class="card-body">
+                <img [src]="f.imageP + '.png'" alt="Product Image" class="product-image">
+                <p class="card-text">{{f.descriptionP}}</p>
+                <p class="card-text">Winner {{f.winner}}</p>
+            </div>
+        </div>
+    }
+</div>

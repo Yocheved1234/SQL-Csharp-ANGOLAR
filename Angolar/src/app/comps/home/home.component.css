@@ -1,0 +1,93 @@
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.gallery-image {
+    width: 100%;
+    height: auto; /* גובה אוטומטי */
+}
+
+.text-content {
+    text-align: center; /* מרכז את המלל */
+    font-family: 'Fb Liddar', sans-serif; /* שימוש בפונט Fb Liddar */
+    padding: 20px; /* רווח פנימי */
+    max-width: 800px; /* רוחב מקסימלי */
+    margin: 0 auto; /* מרכז את האלמנט בדף */
+    animation: slideIn 1s ease-in-out; /* הוספת אנימציה */
+    font-size: 28px; /* גודל האותיות */
+}
+
+h1 {
+    font-family: 'Fb Liddar', sans-serif; /* שימוש בפונט Fb Liddar */
+    font-size:50px; /* גודל האותיות */
+    font-weight: bold; /* הפיכת הטקסט לעבה */
+    color: #2c3e50; /* צבע הכותרת */
+    text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2); /* צל לכותרת */
+    margin: 20px 0; /* רווח סביב הכותרת */
+    text-align: center; /* מרכז את הכותרת */
+}
+
+h2 {
+    font-family: 'Fb Liddar', sans-serif; /* שימוש בפונט Fb Liddar */
+    font-size: 28px; /* גודל האותיות */
+    font-weight: bold; /* הפיכת הטקסט לעבה */
+    color: #2c3e50; /* צבע הכותרת */
+    margin: 10px 0; /* רווח סביב הכותרת */
+    text-align: center; /* מרכז את הכותרת */
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px); /* התחלה ממיקום גבוה יותר */
+        opacity: 0; /* שקיפות 0 */
+    }
+    to {
+        transform: translateY(0); /* סיום במיקום המקורי */
+        opacity: 1; /* שקיפות 1 */
+    }
+}
+
+
+.red-line {
+    border: 0; /* מסיר את הגבול הרגיל */
+    height: 2px; /* גובה הקו */
+    background-color: red; /* צבע הקו */
+    margin: 20px auto; /* רווח מעל ומתחת לקו ומרכז את הקו */
+    width: 200px; /* רוחב הקו - שנה את הערך לפי הצורך */
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto; /* שינוי ל-auto */
+    margin-top: 2%;
+    margin-bottom: 5%;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box; /* כולל padding ושוליים בחישוב הגובה והרוחב */
+}
+
+
+.btn {
+    background: linear-gradient(to right, rgb(173, 39, 39),rgb(222, 39, 39) ); /* גוונים מעורבים של אדום */
+    width: 350px; /* רוחב הכפתור - הגדל את הערך כאן */
+    height: 50px; /* גובה הכפתור - הגדל את הערך כאן */
+    border-radius: 30px; /* מעגל את הפינות */
+    border: none; /* מסיר גבול */
+    font-size: 20px; /* גודל טקסט */
+    cursor: pointer; /* משנה את סמן העכבר */
+    transition: background-color 0.3s, transform 0.3s; /* אפקט מעבר */
+    color: white; /* צבע טקסט לבן */
+    margin-bottom: 0;
+}
+
+.btn:hover {
+    background: linear-gradient(to right,rgb(222, 39, 39), rgb(173, 39, 39)); /* שינוי גוונים בעת ריחוף */
+    transform: scale(1.05); /* תזוזה קלה בעת ריחוף */
+}

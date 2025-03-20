@@ -1,0 +1,131 @@
+@font-face {
+    font-family: 'Riesling'; /* שם הפונט */
+    src: url('/riesling.ttf') format('truetype'); /* נתיב לקובץ הפונט */
+}
+
+body {
+    font-family: 'Riesling', sans-serif; /* שימוש בפונט */
+}
+
+.card-container {
+    display: flex; /* הפוך את הקונטיינר ל-Flexbox */
+    flex-wrap: wrap; /* אפשר לשורות להתעגל */
+    justify-content: space-between; /* רווחים שווים בין הכרטיסים */
+    margin: -5px; /* הסרת רווחים חיצוניים */
+}
+
+.product-card {
+    flex: 0 1 calc(20% - 10px); /* כל כרטיס תופס רבע מהשורה עם רווח */
+    margin: 5px; /* רווח בין הכרטיסים */
+    background-color: #f8f9fa; /* צבע רקע בהיר */
+    border: none; /* ללא גבול */
+    border-radius: 8px; /* פינות מעוגלות */
+    padding: 15px; /* ריווח פנימי */
+    box-sizing: border-box; /* כולל גבולות ורווחים בחישוב הרוחב */
+    transition: transform 0.2s; /* אפקט מעבר */
+}
+
+.product-card:hover {
+    transform: scale(1.05); /* הגדלה קלה בעת ריחוף */
+}
+
+.product-image {
+    width: 100%; /* רוחב מלא */
+    height: auto; /* גובה אוטומטי */
+    border-radius: 5px; /* פינות מעוגלות לתמונה */
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column; /* הפוך את הכרטיס לעמודה */
+    align-items: center; /* מרכז את התוכן לרוחב */
+    text-align: center; /* מרכז את הטקסט */
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column; /* סידור אנכי */
+    align-items: flex-start; /* יישור לשמאל */
+    padding: 20px; /* ריווח פנימי */
+    background-color: #f8f9fa; /* צבע רקע בהיר */
+    border-radius: 8px; /* פינות מעוגלות */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* צל קל */
+}
+
+.sidebar button {
+    margin-bottom: 10px; /* רווח בין הכפתורים */
+    padding: 10px 15px; /* ריווח פנימי לכפתורים */
+    background-color: #007bff; /* צבע רקע הכפתור */
+    color: white; /* צבע טקסט */
+    border: none; /* ללא גבול */
+    border-radius: 5px; /* פינות מעוגלות */
+    cursor: pointer; /* סמן ידני */
+    transition: background-color 0.3s; /* אפקט מעבר */
+}
+
+.sidebar button:hover {
+    background-color: #0056b3; /* צבע רקע בעת ריחוף */
+}
+
+.form-label {
+    margin-top: 15px; /* רווח עליון בין הכפתורים לטופס */
+}
+
+.form-select {
+    height: 25px; /* גובה קטן יותר */
+    border-radius: 5px; /* פינות מעוגלות */
+    background-color: #f0f0f0; /* צבע רקע */
+    font-size: 12px; /* גודל טקסט קטן יותר */
+}
+
+
+
+
+
+
+
+
+.toolbar {
+    display: flex; /* מציב את האלמנטים בשורה אחת */
+    align-items: center; /* מיישר את האלמנטים במרכז בגובה */
+    justify-content: center; /* מיישר את האלמנטים במרכז לרוחב */
+}
+
+
+
+.styled-button, .form-select, .form-label {
+    margin: 10px 0; /* מוסיף רווח של 10px למעלה ולמטה */
+    padding: 10px; /* מרווח פנימי */
+    border: 2px solid black; /* הוספת גבול של 2px בצבע שחור */
+    width: 150px; 
+}
+
+
+.styled-button {
+    height: 50px; /* גובה הכפתור */
+    width: 100px; /* רוחב הכפתור */
+    background-color: red; /* צבע רקע אדום */
+    color: white; /* צבע טקסט */
+    border: none; /* מסיר גבול */
+    border-radius: 0; /* פינות חדות */
+    cursor: pointer; /* מצביע על כך שהכפתור ניתן ללחיצה */
+    transition: background-color 0.3s; /* אנימציה לשינוי צבע */
+}
+
+.styled-button:hover {
+    background-color: darkred; /* צבע רקע כאשר מרחפים מעל הכפתור */
+}
+
+.form-select {
+    height: 50px; /* גובה ה-select */
+    width: 100px; /* רוחב ה-select */
+    border-radius: 0; /* פינות חדות */
+    background-color: #f0f0f0; /* צבע רקע */
+    font-size: 16px; /* גודל טקסט גדול יותר */
+    color: black; /* צבע טקסט שחור */
+    transition: background-color 0.3s; /* אנימציה לשינוי צבע */
+}
+
+.form-select:hover {
+    background-color: #e0e0e0; /* צבע רקע כאשר מרחפים מעל ה-select */
+}

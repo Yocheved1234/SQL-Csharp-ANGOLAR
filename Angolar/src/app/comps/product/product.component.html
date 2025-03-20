@@ -1,0 +1,52 @@
+<div class="toolbar">
+    <button type="button" (click)="byPrice()" class="styled-button">
+        <i class="fas fa-dollar-sign"></i> by price
+    </button>
+    <button type="button" (click)="byDate()" class="styled-button">
+        <i class="fas fa-calendar-alt"></i> by Date
+    </button>
+
+    <select class="form-select" id="categorySelect" name="category" [(ngModel)]="selectedCategory" (change)="getSelectedValues()">
+        <option value="">All</option>
+        <option value="Men">Men</option>
+        <option value="Women">Women</option>
+        <option value="Home">Home</option>
+        <option value="Girls">Girls</option>
+        <option value="Boys">Boys</option>
+    </select>
+    
+    <select class="form-select" id="priceSelect" name="price" [(ngModel)]="selectedPrice" (change)="getSelectedValues()">
+        <option value="">All</option>
+        <option value="15">15</option>
+        <option value="25">25</option>
+        <option value="45">45</option>
+    </select>
+    
+</div>
+
+
+
+<div class="card-container">
+    <div *ngFor="let f of allP" class="product-card" [ngStyle]="{'border': (isWithinAWeek(f.date) ? '2px solid red' : 'none'), 'padding': '10px'}">
+        <div class="card-body">
+            <img [src]="f.imageP + '.png'" alt="Product Image" class="product-image">
+            <p class="card-text" id="big">{{f.descriptionP}}</p>
+            <p class="card-text">Date: {{ f.date | date:'yyyy-MM-dd' }}</p>
+            <p class="card-text">Category: {{f.categoryName}}</p>
+            <div class="d-flex align-items-center">
+                <button class="btn btn-secondary" (click)="decrement(f)" appAddtocart [productId]="f.id">
+                    <i class="fas fa-minus"></i>
+                </button>
+                <span class="mx-2">{{ p.quantities[f.id] || 0 }}</span>
+                <button class="btn btn-secondary" (click)="increment(f)" appAddtocart [productId]="f.id">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
+            <button class="btn btn-bordeaux mt-3" (click)="more(f)">
+                <i class="fas fa-info-circle"></i> View Details
+            </button>
+              
+        </div>
+    </div>
+</div>
+

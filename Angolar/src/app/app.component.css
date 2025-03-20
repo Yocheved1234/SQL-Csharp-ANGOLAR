@@ -1,0 +1,36 @@
+  body {
+    font-family: 'Arial', sans-serif; /* גופן */
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar {
+    background-color: white; /* צבע הרקע */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* הצל */
+    padding: 10px 0; /* רווח פנימי */
+    text-align: center; /* מרכז את התוכן */
+  }
+
+  .nav {
+    display: inline-block; /* מרכז את ה-ul */
+    padding: 0; /* הסרת רווח פנימי */
+    list-style: none; /* הסרת תבליטים */
+  }
+
+  .nav-item {
+    display: inline-block; /* הצג את הפריטים בשורה */
+    margin: 0 30px; /* רווח בין הפריטים */
+  }
+
+  .nav-link {
+    font-size: 18px; /* גודל כתב */
+    font-weight: bold; /* משקל כתב */
+    color: #333; /* צבע כתב */
+    text-decoration: none; /* הסרת קו תחתון */
+  }
+
+  .nav-link:hover {
+    color: #d41313; /* צבע כתב בהעברה */
+  }
+
+  

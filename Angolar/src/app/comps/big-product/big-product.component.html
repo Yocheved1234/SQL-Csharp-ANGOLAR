@@ -1,0 +1,35 @@
+<div class="container mt-5">
+  <div class="row">
+      <div class="col-md-6">
+          <div class="card">
+              <img class="card-img-top" [src]="current.imageP + '.png'" alt="Product Image">
+          </div>
+      </div>
+      <div class="col-md-6">
+          <div class="card">
+              <div class="card-body">
+                  <h2 class="card-title">{{ current.descriptionP }}</h2>
+                  <br>
+                  <h4 class="card-text">{{ current.info }}</h4>
+                  <br>
+                  <h4 class="card-subtitle mb-2 text-muted">Date of Raful: {{ current.date | date:'yyyy-MM-dd' }}</h4>
+                  <br>
+                  <h4 class="card-text">Price: {{ current.price | dolar}}</h4>
+                  
+                  <div class="d-flex align-items-center mb-3"> <!-- הוספת רווח מתחת לכפתורים -->
+                      <button class="btn btn-secondary" (click)="decrement(current)">
+                          <i class="fas fa-minus"></i> <!-- אייקון מינוס -->
+                      </button>
+                      <span class="mx-2">{{ p.quantities[current.id] || 0 }}</span>
+                      <button class="btn btn-secondary" (click)="increment(current)">
+                          <i class="fas fa-plus"></i> <!-- אייקון פלוס -->
+                      </button>
+                  </div>
+                  <button class="btn btn-custom" (click)="back()">
+                    <i class="fas fa-arrow-left"></i> חזרה
+                </button>                
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
