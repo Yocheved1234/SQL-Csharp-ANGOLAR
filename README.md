@@ -1,4 +1,4 @@
-End-to-end project.
+Fulstack project.
 This project contains 3 languages:
 1. SQL - which contains the database and all the relationships.
 2. C# - which contains the server side, and is divided by a three-tier project with interfaces, injections and dependency separation.
